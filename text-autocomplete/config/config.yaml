@@ -37,7 +37,7 @@ evaluation:
 
 # GPT-2 parameters
 gpt2:
-  model_name: "../model/distilGPT2"
+  model_name: "distilgpt2"
   max_length_padding: 20
   do_sample: false
   num_return_sequences: 1
