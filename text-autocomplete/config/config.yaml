@@ -1,0 +1,52 @@
+# Configuration file for Autocomplete System
+
+# Data parameters
+data:
+  data_path: "../data/training.100000.processed.noemoticon.csv"
+  max_vocab_size: 10000
+  min_freq: 1
+  seq_length: 5
+  predict_n_tokens: 1
+  test_size: 0.1
+  random_seed: 42
+  num_samples_gpt2_eval: 10
+  batch_size: 512
+
+# Model parameters
+model:
+  embedding_dim: 128
+  hidden_dim: 512
+  num_layers: 3
+  dropout: 0.3
+  bidirectional: false
+
+# Training parameters
+training:
+  num_epochs: 5
+  learning_rate: 0.001
+  patience: 2
+  factor: 0.5
+  clip_grad_norm: 1.0
+  device: "cuda"  # or "cpu"
+
+# Evaluation parameters
+evaluation:
+  num_examples_display: 5
+  num_differing_examples: 10
+  interactive_test_samples: 5
+
+# GPT-2 parameters
+gpt2:
+  model_name: "../model/distilGPT2"
+  max_length_padding: 20
+  do_sample: false
+  num_return_sequences: 1
+
+# File paths
+paths:
+  model_save: "../model/lstm_autocomplete.pth"
+  preprocessor_save: "preprocessor.pkl"
+  comparison_csv: "model_comparison.csv"
+  comparison_plot: "model_comparison.png"
+  training_plot: "training_history.png"
+  final_results: "final_results.json"
